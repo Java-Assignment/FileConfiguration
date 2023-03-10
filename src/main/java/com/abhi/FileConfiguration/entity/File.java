@@ -6,6 +6,9 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 
 @Document(collection = "FileConfigurer")
 @Data
@@ -14,4 +17,7 @@ public class File {
     @Field("filename")
     private String fileName;
     private Schedule schedule;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate createDate;
+
 }

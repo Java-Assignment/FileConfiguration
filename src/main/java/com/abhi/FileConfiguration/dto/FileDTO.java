@@ -5,6 +5,9 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
+
+import java.time.LocalDate;
 
 @Data
 @NoArgsConstructor
@@ -15,4 +18,6 @@ public class FileDTO {
     @Schema(description = "Indicates Schedule status",defaultValue = "HOURLY",allowableValues = "[HOURLY,DAILY,WEEKLY,MONTHLY]")
     @NotNull
     private Schedule schedule;
+    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
+    private LocalDate createDate;
 }
