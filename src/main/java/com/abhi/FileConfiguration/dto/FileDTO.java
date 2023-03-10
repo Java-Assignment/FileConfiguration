@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.Date;
 
 @Data
 @NoArgsConstructor
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 public class FileDTO {
     @NotNull
     private String fileName;
-    @Schema(description = "Indicates Schedule status",defaultValue = "HOURLY",allowableValues = "[HOURLY,DAILY,WEEKLY,MONTHLY]")
+    @Schema(description = "Indicates Schedule status", defaultValue = "HOURLY", allowableValues = "[HOURLY,DAILY,WEEKLY,MONTHLY]")
     @NotNull
     private Schedule schedule;
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)

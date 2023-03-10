@@ -9,8 +9,9 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import java.time.LocalDate;
+import java.util.Date;
 
-@Document(collection = "FileConfigurer")
+@Document(collection = "FileConfigure")
 @Data
 public class File {
     @Id
