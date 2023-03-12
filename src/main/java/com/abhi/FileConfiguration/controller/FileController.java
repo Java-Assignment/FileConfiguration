@@ -23,8 +23,7 @@ public interface FileController {
     @Operation(summary = "Create a File Config")
     ResponseEntity<FileDTO> add(@RequestBody @Valid FileDTO fileDTO);
 
-    @GetMapping("/data")
-    ResponseEntity <List<FileDTO>> get(@RequestParam("date") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate date) throws AppAccountNotFoundException;
+
 }
 
 

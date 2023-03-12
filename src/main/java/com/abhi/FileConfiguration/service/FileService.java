@@ -10,5 +10,4 @@ import java.util.List;
 
 public interface FileService {
     FileDTO add(FileDTO fileDTO);
-    List<FileDTO> findByDate(LocalDate createDate) throws AppAccountNotFoundException;
 }

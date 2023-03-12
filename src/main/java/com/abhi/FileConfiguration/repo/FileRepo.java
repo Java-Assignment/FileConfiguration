@@ -10,5 +10,4 @@ import java.util.Optional;
 
 @Repository
 public interface FileRepo extends MongoRepository<File,String> {
-    Optional<FileDTO> findByCreateDate(LocalDate createDate);
 }
