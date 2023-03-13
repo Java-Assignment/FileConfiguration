@@ -8,6 +8,10 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @Slf4j
 public class FileServiceImpl implements FileService {
@@ -25,6 +29,13 @@ public class FileServiceImpl implements FileService {
         File filesaved = fileRepo.save(newfile);
         FileDTO fileDTO1 = fileMapper.convertFiletoFileDTO(filesaved);
         return fileDTO1;
+    }
+
+    @Override
+    public List<FileDTO> get() {
+        List<FileDTO> fileDTOS;
+        fileDTOS=fileRepo.findAll().stream().map(file -> fileMapper.convertFiletoFileDTO(file)).collect(Collectors.toList());
+        return  fileDTOS;
     }
 
 
