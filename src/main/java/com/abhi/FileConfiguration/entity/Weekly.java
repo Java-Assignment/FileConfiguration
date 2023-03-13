@@ -10,6 +10,7 @@ import java.time.LocalDate;
 @NoArgsConstructor
 public class Weekly {
     private int week;
-    @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private LocalDate createDate;
+    private int minutes;
+
+    private int hour;
 }

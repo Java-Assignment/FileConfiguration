@@ -14,9 +14,7 @@ import java.time.LocalDateTime;
 public class Daily {
     private String day;
     private int minutes;
-    private int seconds;
+
     private int hour;
-    @DateTimeFormat()
-    private LocalDate createDate;
 
 }
