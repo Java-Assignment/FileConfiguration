@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 @Service
 @Slf4j
@@ -20,6 +21,7 @@ public class FileServiceImpl implements FileService {
     private FileRepo fileRepo;
     @Autowired
     private FileMapper fileMapper;
+    private Stream<FileDTO> fileDTOs;
 
 
     @Override
@@ -30,13 +32,5 @@ public class FileServiceImpl implements FileService {
         FileDTO fileDTO1 = fileMapper.convertFiletoFileDTO(filesaved);
         return fileDTO1;
     }
-
-    @Override
-    public List<FileDTO> get() {
-        List<FileDTO> fileDTOS;
-        fileDTOS=fileRepo.findAll().stream().map(file -> fileMapper.convertFiletoFileDTO(file)).collect(Collectors.toList());
-        return  fileDTOS;
-    }
-
 
 }
