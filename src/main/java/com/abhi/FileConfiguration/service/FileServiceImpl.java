@@ -21,12 +21,10 @@ public class FileServiceImpl implements FileService {
     private FileRepo fileRepo;
     @Autowired
     private FileMapper fileMapper;
-    private Stream<FileDTO> fileDTOs;
 
 
     @Override
     public FileDTO add(FileDTO fileDTO) {
-
         File newfile = fileMapper.convertfileDTOtoFile(fileDTO);
         File filesaved = fileRepo.save(newfile);
         FileDTO fileDTO1 = fileMapper.convertFiletoFileDTO(filesaved);

@@ -10,7 +10,7 @@ import java.time.LocalDate;
 @Data
 @NoArgsConstructor
 public class Weekly {
-    @Schema(description = "indicates which day of week",defaultValue = "0",allowableValues = "[0,1,2,3,4,5,6,7]")
+//    @Schema(description = "indicates which day of week",defaultValue = "0",allowableValues = "[0,1,2,3,4,5,6,7]")
     private int DayOfWeek;
     private int minutes;
 
