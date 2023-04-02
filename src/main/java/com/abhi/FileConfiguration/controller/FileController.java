@@ -1,25 +1,21 @@
 package com.abhi.FileConfiguration.controller;
 
 import com.abhi.FileConfiguration.dto.FileDTO;
-import com.abhi.FileConfiguration.exception.AppAccountNotFoundException;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.Valid;
-import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestMapping;
 
-import java.text.ParseException;
-import java.time.LocalDate;
-import java.util.List;
-
-@RequestMapping(value="/file",produces = {MediaType.APPLICATION_JSON_VALUE,MediaType.APPLICATION_XML_VALUE})
+@RequestMapping(value = "/file", produces = {MediaType.APPLICATION_JSON_VALUE, MediaType.APPLICATION_XML_VALUE})
 @Validated
-@Tag(name = "File configuration API",description = "file configuration api")
+@Tag(name = "File configuration API", description = "file configuration api")
 public interface FileController {
-    @PostMapping()
+    @PostMapping
     @Operation(summary = "Create a File Config")
     ResponseEntity<FileDTO> add(@RequestBody @Valid FileDTO fileDTO);
 
