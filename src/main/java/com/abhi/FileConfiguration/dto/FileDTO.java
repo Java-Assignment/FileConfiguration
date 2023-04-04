@@ -1,6 +1,7 @@
 package com.abhi.FileConfiguration.dto;
 
 import com.abhi.FileConfiguration.vo.Daily;
+import com.abhi.FileConfiguration.vo.Hourly;
 import com.abhi.FileConfiguration.vo.Monthly;
 import com.abhi.FileConfiguration.vo.Weekly;
 import io.swagger.v3.oas.annotations.media.Schema;
@@ -12,15 +13,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Schema(description = "This is FileDto ")
 public class FileDTO {
-    @NotNull
+
     private String fileName;
-    private Boolean isHourly;
-    private Boolean isMonthly;
-    private Boolean isWeekly;
-    private  Boolean isDaily;
     private Monthly monthly;
     private Weekly weekly;
     private Daily daily;
+    private Hourly hourly;
+
 
 
 }
